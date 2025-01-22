@@ -17,7 +17,7 @@ const Dashboard = () => {
         const fetchMaterials = async () => {
             try {
                 const res = await axios.get(
-                    "http://localhost:5000/api/materials"
+                    "https://student-teacher-app.onrender.com/api/materials"
                 );
                 setMaterials(res.data.materials);
                 setLoading(false);
@@ -45,7 +45,7 @@ const Dashboard = () => {
 
         try {
             await axios.post(
-                "http://localhost:5000/api/materials/upload",
+                "https://student-teacher-app.onrender.com/api/materials/upload",
                 formData,
                 {
                     headers: { "Content-Type": "multipart/form-data" },
@@ -87,7 +87,7 @@ const Dashboard = () => {
                         {materials.map((material) => (
                             <div className="material-card" key={material._id}>
                                 <a
-                                    href={`http://localhost:5000${material.url}`}
+                                    href={`https://student-teacher-app.onrender.com${material.url}`}
                                     target="_blank"
                                     rel="noreferrer"
                                     className="material-link"
